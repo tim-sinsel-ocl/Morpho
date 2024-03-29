@@ -14,25 +14,9 @@ namespace Morpho25.Settings
         /// </summary>
         public string FileName { get; }
 
-        public const string INTERPOLATION_METHOD = "linear";
         public const string NUDGING = "1";
         public const string NUNDGING_FACTOR = "1.00000";
-        public const string Z_0 = "0.10000";
-
-        /// <summary>
-        /// Limit of wind speed at 2500 meters.
-        /// </summary>
-        public double LimitWind2500 { get; set; }
-        /// <summary>
-        /// Max wind speed at 2500 meter.
-        /// </summary>
-        public double MaxWind2500 { get; set; }
-
-        /// <summary>
-        /// Adjust the minimum interal for updating 
-        /// the Full Forcing inflow.
-        /// </summary>
-        public uint MinFlowsteps { get; set; }
+        public const string VERTICA_T_AIR = "0.00000";
 
         /// <summary>
         /// Use temperature values of EPW as boundary condition.
@@ -72,9 +56,6 @@ namespace Morpho25.Settings
         public FullForcing(string epw, Workspace workspace)
         {
             FileName = FoxBatch.GetFoxFile(epw, workspace);
-            LimitWind2500 = 0;
-            MaxWind2500 = 999.00000;
-            MinFlowsteps = 30;
             ForceTemperature = Active.YES;
             ForceWind = Active.YES;
             ForceRelativeHumidity = Active.YES;
@@ -98,13 +79,9 @@ namespace Morpho25.Settings
             ((int)ForceWind).ToString(),
             ((int)ForcePrecipitation).ToString(),
             ((int)ForceRadClouds).ToString(),
-            INTERPOLATION_METHOD,
             NUDGING, 
             FullForcing.NUNDGING_FACTOR,
-            MinFlowsteps.ToString(),
-            LimitWind2500.ToString(),
-            MaxWind2500.ToString("n5"),
-            Z_0
+            VERTICA_T_AIR
         };
 
         /// <summary>
@@ -117,13 +94,9 @@ namespace Morpho25.Settings
             "forceWind",
             "forcePrecip",
             "forceRadClouds",
-            "interpolationMethod",
             "nudging",
             "nudgingFactor",
-            "minFlowsteps",
-            "limitWind2500",
-            "maxWind2500",
-            "z_0" 
+            "verticalTAir"
         };
 
         /// <summary>
