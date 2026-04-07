@@ -35,13 +35,14 @@ namespace Morpho25.IO
 
             string path = System.IO.Path.Combine(workspace.ProjectFolder, workspace.ModelName + "FOX.bat");
 
+            // UPDATED: Swapped foxmanager.exe with ENVIGuide.exe
             string batch = "@echo I'm writing FOX file...\n" +
             "@echo off\n" +
             "cd {0}\n" +
             "if errorlevel 1 goto :failed\n" +
-            "foxmanager.exe {1} {2}\n" +
+            "ENVIGuide.exe {1} {2}\n" + 
             ": failed\n" +
-            "echo If Envimet is not in default unit 'C:\' connect installation folder.\n" +
+            "echo If Envimet is not in default unit 'C:\\' connect installation folder.\n" +
             "pause\n";
 
             string[] contentOfBatch = { String.Format(batch, envimet, epw, target) };
