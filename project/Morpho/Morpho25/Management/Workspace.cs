@@ -21,7 +21,7 @@ namespace Morpho25.Management
         /// <summary>
         /// Default envimet folder.
         /// </summary>
-        public const string DEFAULT_FOLDER = "ENVImet5";
+        public const string DEFAULT_FOLDER = "ENVImet6";
         #region System details
         private const string VERSION = "7174219";
         private const string ENCRIPTION_LEVEL = "5194660";
