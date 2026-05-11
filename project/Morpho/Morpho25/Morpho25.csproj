@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net48;netstandard2.1;net8.0</TargetFrameworks>
+		<TargetFramework>net48</TargetFramework>
 		<LangVersion>8.0</LangVersion> 
 		<RootNamespace>Morpho25</RootNamespace>
 		<AssemblyName>Morpho25</AssemblyName>
