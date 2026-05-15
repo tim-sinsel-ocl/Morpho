@@ -124,6 +124,7 @@ namespace Morpho25.Management
             DatabaseSource databaseSource, 
             string envimetFolder = null)
         {
+            EnvimetFolder = envimetFolder;
             _systemFolder = GetEnvimetSystemFolder(SYSTEM_FOLDER, envimetFolder);
             _userFolder = GetEnvimetSystemFolder(USER_FOLDER, envimetFolder);
             _pythonFolder = GetEnvimetSystemFolder(PYTHON_FOLDER, envimetFolder);
@@ -167,7 +168,6 @@ namespace Morpho25.Management
 
             SetUserSettings();
             SetProjectInfox(projectInfoxAbsPath, databaseSource);
-
             SetDatabase(databaseSource, _systemFolder, _userFolder);
         }
         /// <summary>
